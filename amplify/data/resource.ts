@@ -5,7 +5,7 @@ const schema = a.schema({
     .model({
       name: a.string(),
       description: a.string(),
-      image: a.string(),
+      files: a.string().array(), // Array of JSON strings containing file objects
     })
     .authorization((allow) => [allow.owner()]),
 });
