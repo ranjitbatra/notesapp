@@ -363,7 +363,49 @@ function App() {
   }
 
   return (
-    <Authenticator>
+    <Authenticator
+      components={{
+        Header() {
+          return (
+            <div className="auth-header">
+              <div className="auth-header-content">
+                <img src={logo} alt="Smart Notes Vault" className="auth-logo" />
+                <h1 className="auth-title">Smart Notes Vault</h1>
+              </div>
+              <p className="auth-subtitle">Professional Notes Management Platform</p>
+            </div>
+          );
+        },
+        Footer() {
+          return (
+            <div className="auth-footer">
+              <div className="trust-indicators">
+                <div className="trust-item">
+                  <span className="trust-icon">👥</span>
+                  <span>Professional Notes Management</span>
+                </div>
+                <div className="trust-item">
+                  <span className="trust-icon">☁️</span>
+                  <span>Built on AWS Platform</span>
+                </div>
+                <div className="trust-item">
+                  <span className="trust-icon">🔒</span>
+                  <span>Secure Cloud Storage</span>
+                </div>
+                <div className="trust-item">
+                  <span className="trust-icon">📱</span>
+                  <span>Access Anywhere</span>
+                </div>
+              </div>
+              <div className="value-props">
+                <div className="value-item">✅ Completely Serverless</div>
+                <div className="value-item">✅ Multi-Device Access</div>
+              </div>
+            </div>
+          );
+        }
+      }}
+    >
       {({ signOut, user }) => (
         <main style={{ padding: '20px', fontFamily: 'Arial, sans-serif' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
