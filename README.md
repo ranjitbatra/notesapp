@@ -82,12 +82,29 @@ Each file in the `files` array contains:
 - **Secure File Previews** - Optimized image thumbnails
 - **Responsive Design** - Mobile-first, progressive web interface
 
+### Modular Architecture Benefits
+- **Maintainable Code** - 76% reduction in main component size (800+ to 189 lines)
+- **Separated Concerns** - Components, hooks, and utilities in dedicated modules
+- **Reusable Components** - Independent, testable UI components
+- **Security Utilities** - Centralized filename sanitization and audit logging
+- **Custom Hooks** - Encapsulated state management with useNotes hook
+- **Type Safety** - Consistent import/export patterns across modules
+
 ## Project Structure
 
 ```
 notesapp/
 ├── src/
-│   ├── App.jsx          # Main application component
+│   ├── components/      # Modular UI Components
+│   │   ├── NoteModal.jsx    # Create/Edit modal component
+│   │   ├── NotesTable.jsx   # Data display table component
+│   │   └── GuideModal.jsx   # User guide modal component
+│   ├── hooks/           # Custom React Hooks
+│   │   └── useNotes.js      # Notes state management hook
+│   ├── utils/           # Utility Functions
+│   │   ├── fileUtils.js     # File handling & security utilities
+│   │   └── auditLogger.js   # Activity logging utility
+│   ├── App.jsx          # Main application component (modularized)
 │   ├── App.css          # Application styles
 │   └── main.jsx         # Application entry point
 ├── amplify/
